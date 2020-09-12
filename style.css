@@ -1,0 +1,188 @@
+html, body { /* mereset atau menghilangkan margin & padding */
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ddd;
+    line-height: 1.65; /* tinggi antar baris */
+    padding-bottom: 1000px; /* membuat body setinggi 1000px supaya bisa di scroll ke bawah */
+}
+
+/* Latihan 1 */
+.container-satu {
+    width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box; /* mencegah table membesar karna padding */
+    display: flex;  /* membuat item berjejer ke samping (akan memaksa dalam satu baris)*/
+}
+
+.kolom-utama {
+    flex: 3;    /* flex: 3; sama dengan flex-grow membuat item ini lebih besar dari yang lain */
+    order: 2;   /* memposisikan item sesui yang kita mau tanpa merubah di HTML */
+}
+
+.sidebar-satu {
+    flex: 1;
+    order: 1;
+}
+
+.sidebar-dua {
+    flex: 1;
+    order: 3;
+
+}
+
+
+
+
+
+/* Latihan 2 */
+.container-dua {
+    max-width: 800px;   /* lebar item otomatis mengikuti container */
+    margin: 50px auto;
+}
+
+.layanan {
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.layanan.satu { /* carikan saya class="layanan satu" */
+    background-color: rgb(120, 120, 243);
+}
+
+.layanan.dua {
+    background-color: rgb(120, 243, 223);
+}
+
+.layanan.tiga {
+    background-color: rgb(243, 120, 206);
+}
+
+
+
+
+
+
+/* Latihan 3 */
+.container-tiga {
+    max-width: 800px; /* jika layar di kecilkan dia ikut */
+    margin: 50px auto;
+    display: flex; /* berjejer ke kanan */
+    flex-wrap: wrap; /* berjejer ke bawah kalau sudah full */
+    justify-content: center; /* membuat item berada di tengah */
+}
+
+.thumbnail { /* tempat gambarnya */
+    width: 50%;     /* jika di buka maka thumbnail yang tampil pada layar ada dua */
+}
+
+.thumbnail img { /* besar gambar relatif terhadaf container-nya */
+    width: 100%;
+}
+
+
+
+/* Latihan 4 */
+.container-empat {
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.card {
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    background-color: #eee;
+    overflow: hidden;
+    margin: 10px;
+    flex: 1; /* memberi flex pada semua card dengan ukuran 1 */
+}
+
+.card .header {
+    height: 150px;
+    background-color: #666;
+}
+
+.card .content {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.card.besar {   /* class="card besar" */
+    transform: scale(1.12);  /* membuat item ini lebih besar dari item yang lain */
+}
+
+
+
+
+
+
+
+/* Latihan 5 */
+.container-lima {
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    border: 5px solid black;
+    display: flex;
+}
+
+.kotak {
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    color: white;
+    text-align: center;
+    /* line-height: 100px; */ /* nilainya harus sama dengan tinggi(untuk membuat tulisan berada di tengah jika satu baris) */
+    margin: auto;
+    display: flex;
+}
+
+.kotak span {
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive */
+@media ( min-width: 600px ) { /* jika (ukuran layar yang tampil) >= (600) maka ini akan di jalankan */
+    .container-dua {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .layanan {
+        width: 30%;
+    }
+
+    .thumbnail {
+        width: 25%;
+    }
+
+    .card {
+        width: 30%;
+    }
+
+    .container-empat {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
