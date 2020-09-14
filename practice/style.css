@@ -95,11 +95,14 @@ body {
 }
 
 .card {
+    width: 80%;
     border: 1px solid #aaa;
     border-radius: 10px;
     background-color: #eee;
     overflow: hidden;
-    margin: 10px;
+    margin: 10px auto;
+    margin-bottom: 30px;
+    /* justify-content: center; */
     flex: 1; /* memberi flex pada semua card dengan ukuran 1 */
 }
 
@@ -177,12 +180,16 @@ body {
         width: 25%;
     }
 
-    .card {
-        width: 30%;
-    }
-
     .container-empat {
         display: flex;
         flex-wrap: wrap;
     }
+    
+    .card {
+        margin: 10px;
+        /* width: 30%; */
+
+        /* justify-content: space-evenly; */
+    }
+
 }
