@@ -1,0 +1,77 @@
+/* apabila tulisan ini masih ada */
+/* buat snipet yang bisa menampilkan komentar dengan menekan "ex" */
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    background-color: rgb(184, 128, 236);
+    justify-content: space-around; /* memberi jarak */
+    /* padding: 20px 0; */ /* membuat item nya di tengah-tengah */
+    color: blanchedalmond; /* memberi warna supaya semua tulisan nya kena */
+    height: 50px; /* tinggi nav */
+    align-items: center; /* membuat item benar-benar di tengah */
+}
+
+nav .logo {
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 3px; /* memberi jarak antar huruf */
+}
+
+nav ul {
+    display: flex;
+    list-style: none; /* supaya tidak ada titik */ 
+    width: 40%;
+    justify-content: space-between; /* buat jarak di sekitar tulisannya */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: blanchedalmond;
+    font-size: 0.8em; /* normal font-size adalah 1em */
+    margin-right: 20px;
+}
+
+nav ul li a:hover {
+    color: rgb(250, 240, 255);
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: flex;
+    flex-direction: column; /* membuat item nya ke bawah lagi */
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+
+/* Responsive Breakpint */
+
+/* ukuran tablet */
+@media screen and (max-width: 768px) { /* jika ukurannya browser-nya kurang dari > maka akan jalan */
+    nav ul {
+        width: 50%;
+    }
+}
+
+/* ukuran mobile */
+@media screen and (max-width: 576px) { /* jika ukurannya browser-nya kurang dari > maka akan jalan */
+    nav ul {
+        display: none;
+    }
+}
