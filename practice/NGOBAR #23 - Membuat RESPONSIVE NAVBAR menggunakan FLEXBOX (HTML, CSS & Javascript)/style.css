@@ -1,5 +1,7 @@
 /* apabila tulisan ini masih ada */
-/* buat snipet yang bisa menampilkan komentar dengan menekan "ex" */
+/* Buat penjelasan mengenai:  */
+/* position */
+/* transform */
 
 
 * {
@@ -9,6 +11,7 @@
 
 body {
     font-family: sans-serif;
+    overflow-x: hidden; /* Kalau ada yang keluar dari layar body, sembunyikan */
 }
 
 /* Navbar */
@@ -38,7 +41,7 @@ nav ul li a {
     text-decoration: none;
     color: blanchedalmond;
     font-size: 0.8em; /* normal font-size adalah 1em */
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 nav ul li a:hover {
@@ -47,8 +50,22 @@ nav ul li a:hover {
 
 /* Hamburger Menu */
 .menu-toggle {
-    display: flex;
+    display: none;
     flex-direction: column; /* membuat item nya ke bawah lagi */
+    height: 20px;/* supaya justify-content bisa digunakan */
+    justify-content: space-between;/* berjejer ke bawah */
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    left: -6px;
+    top: -4px;
+    opacity: 0; /* membuat teransparan sampai tidak kelihatan */
+    cursor: pointer; /* membuat cursor berubah saat mengarah ke checkbox */
+    z-index: 2; /* membuat item lebih atas posisinya dari item yang lain (ini dilakukan karna saat checkbok di tekan dia ke belakan) */
 }
 
 .menu-toggle span {
@@ -56,8 +73,36 @@ nav ul li a:hover {
     width: 28px;
     height: 3px;
     border-radius: 3px;
-    background-color: white;
+    background-color: rgb(234, 192, 255);
+    transition: all 0.5s; /* memberi animasi untuk transform */
 }
+
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) { /* mentarger span pertama (anak ke dua) */
+    transform-origin: 0 0; /* memindahkan poros atau untuk memutar (sumbu x, sumbu y) */
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+/* ~ dibaca sibling. Sibling adalah saudara */
+.menu-toggle input:checked ~ span:nth-child(2) { /* ketika input di check, cari saudaranya yang merupakan span anak ke (2) */
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px); /* translate (menaikkan sumbu x = -1px, menaikkan sumbu y = -1px) */
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0; 
+    transform: scale(0)
+}
+
+
 
 
 /* Responsive Breakpint */
@@ -71,7 +116,28 @@ nav ul li a:hover {
 
 /* ukuran mobile */
 @media screen and (max-width: 576px) { /* jika ukurannya browser-nya kurang dari > maka akan jalan */
+    .menu-toggle {
+        display: flex;
+    }
+    
     nav ul {
-        display: none;
+        position: absolute; 
+        right: 0;
+        flex-direction: column;
+        top: 0;
+        width: 80%;
+        height: 100vh; /* view port heigt adalah satuan baru yang menampilkan tinggi dari layar yang kita lihat */
+        justify-content: space-evenly; /* untuk membuat dia kebawah */
+        align-items: center; /* supaya item-nya di tengah */
+        z-index: -1;
+        background-color: rgb(184, 128, 236);
+        transform: translateX(100%); /* membuat nav ul ini berada di sebelah kanan(keluar dari body atau layar) */
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    nav ul.slide {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
