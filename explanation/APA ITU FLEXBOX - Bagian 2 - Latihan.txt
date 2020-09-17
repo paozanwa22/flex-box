@@ -1,3 +1,6 @@
+// Lebih Lengkapnya, silahkan kunjungi file practik yang penjelasan ada di samping tiap tiap baris sorcode nya
+// Terimakasih sudah mengunjungi (semoga bermanfaat)
+
 //yang bisa kita berikan pada container
 .container {
 	display: flex; /* membuat item berjejer ke kanan */
