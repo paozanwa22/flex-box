@@ -3,7 +3,7 @@
 	display: flex; /* membuat item berjejer ke kanan */
 	flex-direction: row(dari kiri ke kanan) | row-reverse(dari kanan ke kiri) | column(turun ke bawah) | column-reverese; //arah jejeran
 	flex-wrap: nowrap(default) | wrap(supaya dia turun) | wrap-reverse;	//wrap memungkinkan untuk memindahkan items ke baris di bawahnya
-	justify-content:	//mengatur posisi tampilan item yang berada di dalam container 
+	justify-content:	//mengatur posisi tampilan item yang berada di dalam container  (horizontal)
 		flex-start
 		flex-end
 		center
@@ -18,9 +18,9 @@
 		baseline
 	align-content:		//Mengatur jarak antar items terhadap cross axis(hanya berfungsi ketika items lebih dari 1 baris)
 		flex-start
+		flex-end
 		center
 		space-between
-		flex-end
 		stretch
 		space-around
 }

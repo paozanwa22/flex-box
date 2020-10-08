@@ -166,6 +166,7 @@ body {
 
 
 /* Responsive */
+/* max-width layar kecil di dalam-nya dan sebaliknya */
 @media ( min-width: 600px ) { /* jika (ukuran layar yang tampil) >= (600) maka ini akan di jalankan */
     .container-dua {
         display: flex;
