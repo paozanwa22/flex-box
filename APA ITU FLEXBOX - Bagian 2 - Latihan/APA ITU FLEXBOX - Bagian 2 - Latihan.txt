@@ -1,0 +1,33 @@
+max-width: 800px; //saat layarnya membesar, dia tidak akan ikut
+		//jika di kecilkan akan ikut mengecil
+
+
+
+//membuat benar-benar di tengah
+display: flex;
+margin: auto;
+
+//jika tanpa display: flex, maka margin akan berpengaruh untuk membuk 
+mambuat item ke tengah secara (horizontal/ke samping/row/baris)
+
+
+
+
+
+//kalau lebarnya berapa, pakai css yang mana
+@media( min-width: 600px ) { //jika lebih kecil dari 600 pakai yang di atas
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

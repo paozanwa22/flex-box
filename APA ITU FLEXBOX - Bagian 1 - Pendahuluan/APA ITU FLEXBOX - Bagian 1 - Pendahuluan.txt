@@ -1,0 +1,23 @@
+APA ITU FLEXBOX - Bagian 1 - Pendahuluan
+
+//CONTAINER
+display: flex;
+flex-direction
+flex-wrap
+justify-content
+align-items
+align-content
+
+//ITEM
+order
+flex-grow / flex
+align-self
+
+
+
+//clear float
+.container::after {
+ content: '';
+ display: block;
+ clear: both;
+}
